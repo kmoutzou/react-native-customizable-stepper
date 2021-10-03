@@ -11,7 +11,8 @@ const Stepper = (props) => {
 
     const elements = [];
     const stepDetailsList = props.stepDetailsList;
-    const lightBg = 'gray';
+    const lightBg = props.hoverBackground;
+    const hoverTextColor = props.hoverTextColor;
     const widthString = (100 / stepsCount).toString() + '%'
     for (var i = 0; i < stepsCount; i++) {
         if (i != stepsCount - 1) {
@@ -19,7 +20,7 @@ const Stepper = (props) => {
                 elements.push(
                     <View style={{ display: 'flex', flexDirection: 'row', width: widthString }} key={i}>
                         <View style={[styles(props).step, styles(props).activated]}>
-                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: 'white' }}>{stepDetailsList[i].stepName}</Text>}>
+                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: hoverTextColor }}>{stepDetailsList[i].stepName}</Text>}>
                                 <Image resizeMode="center" style={styles(props).iconImgActivated} source={stepDetailsList[i].iconImg} />
                             </Tooltip>
                         </View>
@@ -34,7 +35,7 @@ const Stepper = (props) => {
                     elements.push(
                         <View style={{ display: 'flex', flexDirection: 'row', width: widthString }} key={i}>
                             <View style={[styles(props).step, styles(props).activated]}>
-                                <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: 'white' }}>{stepDetailsList[i].stepName}</Text>}>
+                                <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: hoverTextColor }}>{stepDetailsList[i].stepName}</Text>}>
                                     <Image resizeMode="center" style={styles(props).iconImgActivated} source={stepDetailsList[i].iconImg} />
                                 </Tooltip>
                             </View>
@@ -47,7 +48,7 @@ const Stepper = (props) => {
                     elements.push(
                         <View style={{ display: 'flex', flexDirection: 'row', width: widthString }} key={i}>
                             <View style={[styles(props).step, styles(props).activated]}>
-                                <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: 'white' }}>{stepDetailsList[i].stepName}</Text>}>
+                                <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: hoverTextColor }}>{stepDetailsList[i].stepName}</Text>}>
                                     <Image resizeMode="center" style={styles(props).iconImgActivated} source={stepDetailsList[i].iconImg} />
                                 </Tooltip>
                             </View>
@@ -61,7 +62,7 @@ const Stepper = (props) => {
                 elements.push(
                     <View style={{ display: 'flex', flexDirection: 'row', width: widthString }} key={i}>
                         <View style={[styles(props).step, styles(props).failed]}>
-                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: 'white' }}>{stepDetailsList[i].stepName}</Text>}>
+                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: hoverTextColor }}>{stepDetailsList[i].stepName}</Text>}>
                                 <Image resizeMode="center" style={styles(props).iconImgActivated} source={stepDetailsList[i].iconImg} />
                             </Tooltip>
                         </View>
@@ -77,7 +78,7 @@ const Stepper = (props) => {
                 elements.push(
                     <View style={{ display: 'flex', flexDirection: 'row', width: widthString }} key={i}>
                         <View style={[styles(props).step, styles(props).failed]}>
-                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: 'white' }}>{stepDetailsList[i].stepName}</Text>}>
+                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: hoverTextColor }}>{stepDetailsList[i].stepName}</Text>}>
                                 <Image resizeMode="center" style={styles(props).iconImgActivated} source={stepDetailsList[i].iconImg} />
                             </Tooltip>
                         </View>
@@ -91,7 +92,7 @@ const Stepper = (props) => {
                 elements.push(
                     <View style={{ display: 'flex', flexDirection: 'row', width: widthString }} key={i}>
                         <View style={[styles(props).step, styles(props).failed]}>
-                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: 'white' }}>{stepDetailsList[i].stepName}</Text>}>
+                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: hoverTextColor }}>{stepDetailsList[i].stepName}</Text>}>
                                 <Image resizeMode="center" style={styles(props).iconImgActivated} source={stepDetailsList[i].iconImg} />
                             </Tooltip>
                         </View>
@@ -104,7 +105,7 @@ const Stepper = (props) => {
                 elements.push(
                     <View style={{ display: 'flex', flexDirection: 'row', width: widthString }} key={i}>
                         <View style={[styles(props).step, styles(props).failed]}>
-                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: 'white' }}>{stepDetailsList[i].stepName}</Text>}>
+                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: hoverTextColor }}>{stepDetailsList[i].stepName}</Text>}>
                                 <Image resizeMode="center" style={styles(props).iconImgActivated} source={stepDetailsList[i].iconImg} />
                             </Tooltip>
                         </View>
@@ -117,7 +118,7 @@ const Stepper = (props) => {
                 elements.push(
                     <View style={{ display: 'flex', flexDirection: 'row', width: widthString }} key={i}>
                         <View style={[styles(props).step]}>
-                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: 'white' }}>{stepDetailsList[i].stepName}</Text>}>
+                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: hoverTextColor }}>{stepDetailsList[i].stepName}</Text>}>
                                 <Image resizeMode="center" style={styles(props).iconImg} source={stepDetailsList[i].iconImg} />
                             </Tooltip>
                         </View>
@@ -132,7 +133,7 @@ const Stepper = (props) => {
                 elements.push(
                     <View style={{ display: 'flex', flexDirection: 'row', borderColor: 'green', borderWidth: 0, width: widthString }} key={i}>
                         <View style={[styles(props).step, styles(props).activated]}>
-                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: 'white' }}>{stepDetailsList[i].stepName}</Text>}>
+                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: hoverTextColor }}>{stepDetailsList[i].stepName}</Text>}>
                                 <Image resizeMode="center" style={styles(props).iconImgActivated} source={stepDetailsList[i].iconImg} />
                             </Tooltip>
                         </View>
@@ -143,7 +144,7 @@ const Stepper = (props) => {
                 elements.push(
                     <View style={{ display: 'flex', flexDirection: 'row', borderColor: 'green', borderWidth: 0, width: widthString }} key={i}>
                         <View style={[styles(props).step, styles(props).failed]}>
-                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: 'white' }}>{stepDetailsList[i].stepName}</Text>}>
+                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: hoverTextColor }}>{stepDetailsList[i].stepName}</Text>}>
                                 <Image resizeMode="center" style={styles(props).iconImgActivated} source={stepDetailsList[i].iconImg} />
                             </Tooltip>
                         </View>
@@ -154,7 +155,7 @@ const Stepper = (props) => {
                 elements.push(
                     <View style={{ display: 'flex', flexDirection: 'row', borderColor: 'green', borderWidth: 0, width: widthString }} key={i}>
                         <View style={[styles(props).step]}>
-                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: 'white' }}>{stepDetailsList[i].stepName}</Text>}>
+                            <Tooltip withOverlay={false} backgroundColor={lightBg} popover={<Text style={{ color: hoverTextColor }}>{stepDetailsList[i].stepName}</Text>}>
                                 <Image resizeMode="center" style={styles(props).iconImg} source={stepDetailsList[i].iconImg} />
                             </Tooltip>
                         </View>
