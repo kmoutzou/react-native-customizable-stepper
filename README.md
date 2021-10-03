@@ -57,6 +57,12 @@ The number of steps required to display. The library automatically utilises the 
 
 Last Successful Step. If there are 4 steps and the last successful step was 2, please enter 2
 
+## hoverBackground
+Text hover bubble background color that needs to be displayed on touch of the step
+
+## hoverTextColor
+Text color on the hover
+
 ## lastFailedStep
 
 Last Failed Step. If there are 4 steps and the last successful step was 2, and the last failed step was 3, please enter 3.
@@ -71,10 +77,6 @@ Name of the step, which should be shown upon hover
 ### iconImg
 Pass the image/icon to be displayed inside the step bubble here
 
-### hoverBackground
-Text hover bubble background color that needs to be displayed on touch of the step
 
-### hoverTextColor
-Text color on the hover
 
 
