@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import Tooltip from 'rn-tooltip';
 
-const Stepper = (props) => {
+const Stepper = props => {
   const [stepsCount, setStepsCount] = useState(props.numberOfSteps);
   const [lastActivated, setLastActivated] = useState(props.lastActivated);
   const [lastFailed, setLastFailed] = useState(props.lastFailed || null);
@@ -20,7 +20,7 @@ const Stepper = (props) => {
             style={{
               display: 'flex',
               flexDirection: 'row',
-              width: widthString
+              width: widthString,
             }}
             key={i}>
             <View style={[styles(props).step, styles(props).activated]}>
@@ -33,7 +33,7 @@ const Stepper = (props) => {
                   </Text>
                 }> */}
               <Image
-                resizeMode='center'
+                resizeMode="center"
                 style={styles(props).iconImgActivated}
                 source={stepDetailsList[i].iconImg}
               />
@@ -41,7 +41,7 @@ const Stepper = (props) => {
             </View>
 
             <View style={[styles(props).next, styles(props).activated]}></View>
-          </View>
+          </View>,
         );
       } else if (lastActivated && i + 1 == lastActivated) {
         if (lastFailed && lastFailed > lastActivated) {
@@ -50,7 +50,7 @@ const Stepper = (props) => {
               style={{
                 display: 'flex',
                 flexDirection: 'row',
-                width: widthString
+                width: widthString,
               }}
               key={i}>
               <View style={[styles(props).step, styles(props).activated]}>
@@ -63,14 +63,14 @@ const Stepper = (props) => {
                     </Text>
                   }> */}
                 <Image
-                  resizeMode='center'
+                  resizeMode="center"
                   style={styles(props).iconImgActivated}
                   source={stepDetailsList[i].iconImg}
                 />
                 {/* </Tooltip> */}
               </View>
               <View style={[styles(props).next, styles(props).failed]}></View>
-            </View>
+            </View>,
           );
         } else {
           elements.push(
@@ -78,7 +78,7 @@ const Stepper = (props) => {
               style={{
                 display: 'flex',
                 flexDirection: 'row',
-                width: widthString
+                width: widthString,
               }}
               key={i}>
               <View style={[styles(props).step, styles(props).activated]}>
@@ -91,14 +91,14 @@ const Stepper = (props) => {
                     </Text>
                   }> */}
                 <Image
-                  resizeMode='center'
+                  resizeMode="center"
                   style={styles(props).iconImgActivated}
                   source={stepDetailsList[i].iconImg}
                 />
                 {/* </Tooltip> */}
               </View>
               <View style={[styles(props).next]}></View>
-            </View>
+            </View>,
           );
         }
       } else if (lastFailed && i + 1 < lastFailed) {
@@ -107,7 +107,7 @@ const Stepper = (props) => {
             style={{
               display: 'flex',
               flexDirection: 'row',
-              width: widthString
+              width: widthString,
             }}
             key={i}>
             <View style={[styles(props).step, styles(props).failed]}>
@@ -120,7 +120,7 @@ const Stepper = (props) => {
                   </Text>
                 }> */}
               <Image
-                resizeMode='center'
+                resizeMode="center"
                 style={styles(props).iconImgActivated}
                 source={stepDetailsList[i].iconImg}
               />
@@ -128,7 +128,7 @@ const Stepper = (props) => {
             </View>
 
             <View style={[styles(props).next, styles(props).failed]}></View>
-          </View>
+          </View>,
         );
       } else if (lastFailed && i + 1 == lastFailed) {
         elements.push(
@@ -136,7 +136,7 @@ const Stepper = (props) => {
             style={{
               display: 'flex',
               flexDirection: 'row',
-              width: widthString
+              width: widthString,
             }}
             key={i}>
             <View style={[styles(props).step, styles(props).failed]}>
@@ -149,14 +149,14 @@ const Stepper = (props) => {
                   </Text>
                 }> */}
               <Image
-                resizeMode='center'
+                resizeMode="center"
                 style={styles(props).iconImgActivated}
                 source={stepDetailsList[i].iconImg}
               />
               {/* </Tooltip> */}
             </View>
             <View style={[styles(props).next]}></View>
-          </View>
+          </View>,
         );
       } else if (
         lastActivated &&
@@ -169,7 +169,7 @@ const Stepper = (props) => {
             style={{
               display: 'flex',
               flexDirection: 'row',
-              width: widthString
+              width: widthString,
             }}
             key={i}>
             <View style={[styles(props).step, styles(props).failed]}>
@@ -182,14 +182,14 @@ const Stepper = (props) => {
                   </Text>
                 }> */}
               <Image
-                resizeMode='center'
+                resizeMode="center"
                 style={styles(props).iconImgActivated}
                 source={stepDetailsList[i].iconImg}
               />
               {/* </Tooltip> */}
             </View>
             <View style={[styles(props).next, styles(props)]}></View>
-          </View>
+          </View>,
         );
       } else if (
         lastActivated &&
@@ -202,7 +202,7 @@ const Stepper = (props) => {
             style={{
               display: 'flex',
               flexDirection: 'row',
-              width: widthString
+              width: widthString,
             }}
             key={i}>
             <View style={[styles(props).step, styles(props).failed]}>
@@ -215,14 +215,14 @@ const Stepper = (props) => {
                   </Text>
                 }> */}
               <Image
-                resizeMode='center'
+                resizeMode="center"
                 style={styles(props).iconImgActivated}
                 source={stepDetailsList[i].iconImg}
               />
               {/* </Tooltip> */}
             </View>
             <View style={[styles(props).next, styles(props).failed]}></View>
-          </View>
+          </View>,
         );
       } else {
         elements.push(
@@ -230,7 +230,7 @@ const Stepper = (props) => {
             style={{
               display: 'flex',
               flexDirection: 'row',
-              width: widthString
+              width: widthString,
             }}
             key={i}>
             <View style={[styles(props).step]}>
@@ -243,14 +243,14 @@ const Stepper = (props) => {
                   </Text>
                 }> */}
               <Image
-                resizeMode='center'
+                resizeMode="center"
                 style={styles(props).iconImg}
                 source={stepDetailsList[i].iconImg}
               />
               {/* </Tooltip> */}
             </View>
             <View style={[styles(props).next]}></View>
-          </View>
+          </View>,
         );
       }
     } else {
@@ -262,7 +262,7 @@ const Stepper = (props) => {
               flexDirection: 'row',
               borderColor: 'green',
               borderWidth: 0,
-              width: widthString
+              width: widthString,
             }}
             key={i}>
             <View style={[styles(props).step, styles(props).activated]}>
@@ -275,13 +275,13 @@ const Stepper = (props) => {
                   </Text>
                 }> */}
               <Image
-                resizeMode='center'
+                resizeMode="center"
                 style={styles(props).iconImgActivated}
                 source={stepDetailsList[i].iconImg}
               />
               {/* </Tooltip> */}
             </View>
-          </View>
+          </View>,
         );
       } else if (lastFailed && i + 1 == lastFailed) {
         elements.push(
@@ -291,7 +291,7 @@ const Stepper = (props) => {
               flexDirection: 'row',
               borderColor: 'green',
               borderWidth: 0,
-              width: widthString
+              width: widthString,
             }}
             key={i}>
             <View style={[styles(props).step, styles(props).failed]}>
@@ -304,13 +304,13 @@ const Stepper = (props) => {
                   </Text>
                 }> */}
               <Image
-                resizeMode='center'
+                resizeMode="center"
                 style={styles(props).iconImgActivated}
                 source={stepDetailsList[i].iconImg}
               />
               {/* </Tooltip> */}
             </View>
-          </View>
+          </View>,
         );
       } else {
         elements.push(
@@ -320,7 +320,7 @@ const Stepper = (props) => {
               flexDirection: 'row',
               borderColor: 'green',
               borderWidth: 0,
-              width: widthString
+              width: widthString,
             }}
             key={i}>
             <View style={[styles(props).step]}>
@@ -333,13 +333,13 @@ const Stepper = (props) => {
                   </Text>
                 }> */}
               <Image
-                resizeMode='center'
+                resizeMode="center"
                 style={styles(props).iconImg}
                 source={stepDetailsList[i].iconImg}
               />
               {/* </Tooltip> */}
             </View>
-          </View>
+          </View>,
         );
       }
     }
@@ -351,14 +351,14 @@ const Stepper = (props) => {
         width: '100%',
         height: '100%',
         display: 'flex',
-        flexDirection: 'row'
+        flexDirection: 'row',
       }}>
       {elements}
     </View>
   );
 };
 
-const styles = (props) =>
+const styles = props =>
   StyleSheet.create({
     step: {
       aspectRatio: 1,
@@ -367,35 +367,36 @@ const styles = (props) =>
       borderColor: 'gray',
       borderWidth: 2,
       justifyContent: 'center',
-      alignSelf: 'center'
+      alignSelf: 'center',
+      padding: 5,
     },
     next: {
       width: '35%',
       height: 1,
       borderColor: 'gray',
       borderWidth: 1,
-      alignSelf: 'center'
+      alignSelf: 'center',
     },
     iconImgActivated: {
       height: '100%',
       aspectRatio: 1,
-      tintColor: 'white'
+      tintColor: 'white',
     },
     iconImg: {
       height: '100%',
       aspectRatio: 1,
-      tintColor: 'black'
+      tintColor: 'black',
     },
     activated: {
       borderColor: props.successColor,
       backgroundColor: props.successColor,
-      borderWidth: 1.5
+      borderWidth: 1.5,
     },
     failed: {
       borderColor: props.failedColor,
       backgroundColor: props.failedColor,
-      borderWidth: 1.5
-    }
+      borderWidth: 1.5,
+    },
   });
 
 export default Stepper;
